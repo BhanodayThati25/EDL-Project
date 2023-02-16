@@ -20,10 +20,10 @@ class Application(tk.Frame):
         self.button2.pack(side="right")
 
     def run_code1(self):
-        subprocess.Popen(["python3", "/home/EDL-Project/newint.py"])
+        subprocess.Popen(["python3", "/home/EDL-Project/test1.py"])
 
     def run_code2(self):
-        subprocess.Popen(["python3", "/home/EDL-Project/interold.py"])
+        subprocess.Popen(["python3", "/home/EDL-Project/test2.py"])
 
 root = tk.Tk()
 app = Application(master=root)
