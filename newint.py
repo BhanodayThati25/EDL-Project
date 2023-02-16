@@ -2,21 +2,20 @@ import RPi.GPIO as GPIO
 import time
 import ADS1263
 
-
-# set the pin numbers for the Digipot click - consecutive GPIO pins on raspberry pi
-
 GPIO.setmode(GPIO.BCM)
-ADC = ADS1263.ADS1263()
 
+ADC = ADS1263.ADS1263()
 if (ADC.ADS1263_init_ADC1('ADS1263_400SPS') == -1):
 		exit()
-
 ADC.ADS1263_SetMode(0) # 0 is singleChannel, 1 is diffChannel
 
-channelList = 0
 cs_pin = 17
 sclk_pin = 27
 mosi_pin = 22
+GPIO.setup(cs_pin, GPIO.OUT)
+GPIO.setup(sclk_pin, GPIO.OUT)
+GPIO.setup(mosi_pin, GPIO.OUT)
+
 REF = 5.08       			
 alpha = 2.5
 sigma = 0.01
@@ -24,10 +23,6 @@ sigma = 0.01
 def write_digipot(data):
 	# sending 24 bit data
 	# set the GPIO pins as outputs
-	GPIO.setup(cs_pin, GPIO.OUT)
-	GPIO.setup(sclk_pin, GPIO.OUT)
-	GPIO.setup(mosi_pin, GPIO.OUT)
-
 	GPIO.output(cs_pin, 0)
 
 	#shift data word - MSB first
