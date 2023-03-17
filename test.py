@@ -1,8 +1,8 @@
 import tkinter as tk
  
 root = tk.Tk()
-width = 300 # Width 
-height = 200 # Height
+width = 250 # Width 
+height = 150 # Height
  
 screen_width = root.winfo_screenwidth()  # Width of the screen
 screen_height = root.winfo_screenheight() # Height of the screen
@@ -13,3 +13,4 @@ y = (screen_height/2) - (height/2)
 print(x,y,screen_width,screen_height)
 root.geometry('%dx%d+%d+%d' % (width, height, x, y))
 root.mainloop()
+
