@@ -156,11 +156,11 @@ class Application(tk.Frame):
         self.keypad_window.destroy()
         
         if mode==0:
-            file_path = f"/home/pi/Desktop/app/CYFRA/{user}.txt"
+            file_path = f"/home/pi/Desktop/EDL-Project/CYFRA/{user}.txt"
 
             if x==0:
-                list_of_files = os.listdir('/home/pi/Desktop/app/CYFRA')
-                full_path = ["/home/pi/Desktop/app/CYFRA/{0}".format(x) for x in list_of_files]
+                list_of_files = os.listdir('/home/pi/Desktop/EDL-Project/CYFRA')
+                full_path = ["/home/pi/Desktop/EDL-Project/CYFRA/{0}".format(x) for x in list_of_files]
     
                 if os.path.exists(file_path):
                     self.replace_window(user,mode)
@@ -190,11 +190,11 @@ class Application(tk.Frame):
                 else:
                     self.common_window("User not Found")
         if mode == 1:
-            file_path = f"/home/pi/Desktop/app/CEA/{user}.txt"
+            file_path = f"/home/pi/Desktop/EDL-Project/CEA/{user}.txt"
             
             if x==0:
-                list_of_files = os.listdir('/home/pi/Desktop/app/CEA')
-                full_path = ["/home/pi/Desktop/app/CEA/{0}".format(x) for x in list_of_files]
+                list_of_files = os.listdir('/home/pi/Desktop/EDL-Project/CEA')
+                full_path = ["/home/pi/Desktop/EDL-Project/CEA/{0}".format(x) for x in list_of_files]
 
                 if os.path.exists(file_path):
                     self.replace_window(user,mode)
@@ -226,18 +226,18 @@ class Application(tk.Frame):
         self.confirm.destroy()
             # Get all the files in the folder
         if mode==0:
-            files = os.listdir("/home/pi/Desktop/app/CYFRA")
+            files = os.listdir("/home/pi/Desktop/EDL-Project/CYFRA")
 
                 # Loop through the files and delete them
             for file_name in files:
-                file_path = os.path.join("/home/pi/Desktop/app/CYFRA", file_name)
+                file_path = os.path.join("/home/pi/Desktop/EDL-Project/CYFRA", file_name)
                 os.remove(file_path)
         if mode==1:
-            files = os.listdir("/home/pi/Desktop/app/CEA")
+            files = os.listdir("/home/pi/Desktop/EDL-Project/CEA")
 
                 # Loop through the files and delete them
             for file_name in files:
-                file_path = os.path.join("/home/pi/Desktop/app/CEA", file_name)
+                file_path = os.path.join("/home/pi/Desktop/EDL-Project/CEA", file_name)
                 os.remove(file_path)
         self.common_window("Deleted")
 
