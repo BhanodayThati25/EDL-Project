@@ -47,9 +47,9 @@ class Application(tk.Frame):
         self.home.configure(background="#ADD8E6")
         self.heading_label.configure(fg="#001F54", bg="#ADD8E6")
 
-        self.delete = ImageTk.PhotoImage(Image.open("delete.png"))
-        self.delete_all = ImageTk.PhotoImage(Image.open("delete_all.png"))
-        self.back_p = ImageTk.PhotoImage(Image.open("back.png"))
+        self.delete = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/EDL-Project/delete.png"))
+        self.delete_all = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/EDL-Project/delete_all.png"))
+        self.back_p = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/EDL-Project/back.png"))
         # Create button 1 and pack it to the left half of the screen
         self.button1 = tk.Button(self.home, text="New User",font=("Arial", 12, "bold"),bd=10,height= 15, width=20,relief='ridge', command=partial(self.show_keypad, 0, mode))
         self.button1.grid(row=2,rowspan=3,column=1,padx=40, pady=20) 
