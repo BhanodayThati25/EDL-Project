@@ -172,7 +172,7 @@ class Application(tk.Frame):
         self.confirm.overrideredirect(True)
         self.confirm.configure(background="#66B8E1")
 
-        self.label = tk.Label(self.confirm, text="Do you want to delete all?",font=("Arial", 18, "bold"))
+        self.label = tk.Label(self.confirm, text="Do you want to delete all?",font=("Arial", 14, "bold"))
         self.label.grid(row=0,column=0,columnspan=2,padx=6,pady=30)  
         self.label.configure(fg="black", bg="#66B8E1") 
 
@@ -198,12 +198,15 @@ class Application(tk.Frame):
     
                 if os.path.exists(file_path):
                     self.replace_window(user,mode)
-                if len(list_of_files) == 2:
-                    oldest_file = min(full_path, key=os.path.getctime)
-                    os.remove(oldest_file)
+                    if len(list_of_files) == 2:
+                        oldest_file = min(full_path, key=os.path.getctime)
+                        os.remove(oldest_file)
                 else:
                     newuser.input(user,mode)
                     self.common_window("Done")
+                    if len(list_of_files) == 2:
+                        oldest_file = min(full_path, key=os.path.getctime)
+                        os.remove(oldest_file)
 
             if x==1:
                         
@@ -232,12 +235,15 @@ class Application(tk.Frame):
 
                 if os.path.exists(file_path):
                     self.replace_window(user,mode)
-                if len(list_of_files) == 2:
-                    oldest_file = min(full_path, key=os.path.getctime)
-                    os.remove(oldest_file)
+                    if len(list_of_files) == 2:
+                        oldest_file = min(full_path, key=os.path.getctime)
+                        os.remove(oldest_file)
                 else:
                     newuser.input(user,mode)
                     self.common_window("Done")
+                    if len(list_of_files) == 2:
+                        oldest_file = min(full_path, key=os.path.getctime)
+                        os.remove(oldest_file)
 
             if x==1:
                 if os.path.exists(file_path):
