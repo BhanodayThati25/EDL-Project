@@ -36,9 +36,14 @@ class Application(tk.Frame):
     def create_widgets(self,mode):
         self.home = tk.Toplevel()
         self.home.attributes('-fullscreen', True)
-        self.heading_label = tk.Label(self.home, text="EDL Project", font=("Arial", 18, "bold"))
-        #self.heading_label.pack(side="top", pady=20)
-        self.heading_label.grid(row=0,column=2,padx=20, pady=20)
+        if mode==0:
+            self.heading_label = tk.Label(self.home, text="CYFRA", font=("Arial", 18, "bold"))
+            #self.heading_label.pack(side="top", pady=20)
+            self.heading_label.grid(row=0,column=2,padx=20, pady=20)
+        if mode==1:
+            self.heading_label = tk.Label(self.home, text="CEA", font=("Arial", 18, "bold"))
+            #self.heading_label.pack(side="top", pady=20)
+            self.heading_label.grid(row=0,column=2,padx=20, pady=20)
         self.home.configure(background="#ADD8E6")
         self.heading_label.configure(fg="#001F54", bg="#ADD8E6")
 
@@ -125,32 +130,40 @@ class Application(tk.Frame):
         self.replace.geometry("300x200+250+140")
         #self.replace.resizable(False, False)
         self.replace.overrideredirect(True)
+        self.replace.configure(background="#66B8E1")
 
         self.label = tk.Label(self.replace, text="User Already Exists",font=("Arial", 14, "bold"))
         self.label.grid(row=0,column=0,columnspan=2,padx=15,pady=15)  
+        self.label.configure(fg="black", bg="#66B8E1")
 
         self.labe = tk.Label(self.replace, text="Do you want to replace it?",font=("Arial", 14, "bold"))
         self.labe.grid(row=1,column=0,columnspan=2,padx=15,pady=15)    
-        
+        self.labe.configure(fg="black", bg="#66B8E1")
+
         ok_button = tk.Button(self.replace, text="OK", font=("Arial", 10),relief='ridge', command=partial(self.replacing, user, mode))
         ok_button.grid(row=2,column=0,padx=20,pady=10)
+        ok_button.configure(bg="#005F8C", fg="white")
 
         cancel = tk.Button(self.replace, text="Cancel", font=("Arial", 10),relief='ridge', command=self.replace.destroy)
         cancel.grid(row=2,column=1,padx=20,pady=10)
+        cancel.configure(bg="#005F8C", fg="white")
 
     def common_window(self,x):
         self.common = tk.Toplevel()
         self.common.geometry("250x150+275+165")
         #self.common.resizable(False, False)
         self.common.overrideredirect(True)
+        self.common.configure(background="#66B8E1")
 
         self.label = tk.Label(self.common, text=x,font=("Arial", 18, "bold"))
-        self.label.grid(row=0,column=0,padx=6,pady=10)      
+        self.label.grid(row=0,column=0,padx=6,pady=10) 
+        self.label.configure(fg="black", bg="#66B8E1")     
         self.common.columnconfigure(0, weight=1)
         self.common.rowconfigure(0, weight=1)
 
         ok_button = tk.Button(self.common, text="OK", font=("Arial", 12),relief='ridge', command=self.common.destroy)
         ok_button.grid(row=1,column=0,padx=20,pady=8)
+        ok_button.configure(bg="#005F8C", fg="white")
     
     def confirm_window(self,mode):
         self.confirm = tk.Toplevel()
