@@ -88,7 +88,7 @@ class Application(tk.Frame):
             ".", "0", "⌫"
         ]
         for i in range(len(buttons)):
-            button = tk.Button(self.keypad_window, text=buttons[i],font=("Arial", 14), width=10, height=3,relief='ridge')
+            button = tk.Button(self.keypad_window, text=buttons[i],font=("Arial", 14), width=9, height=3,relief='ridge')
             button.grid(row=((i // 3 + 2)-1), column=i % 3,padx=6,pady=3)
             button.bind("<Button-1>", self.keypad_button_click)
 
