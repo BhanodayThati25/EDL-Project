@@ -14,11 +14,12 @@ class Application(tk.Frame):
         self.master.attributes('-fullscreen', True)
         self.pack()
         self.sensor_type()
-        
+        self.configure(background="#ADD8E6")
         # Create a main heading label and pack it at the top of the window
-        self.heading_label = tk.Label(self, text="EDL Project", font=("Arial", 18, "bold"))
+        self.heading_label = tk.Label(self, text="EDL Project", font=("Arial", 20, "bold"))
         #self.heading_label.pack(side="top", pady=20)
         self.heading_label.grid(row=0,column=2,padx=20, pady=20) 
+        self.heading_label.configure(fg="#001F54", bg="#ADD8E6")
 
     def sensor_type(self):
         self.button1 = tk.Button(self, text="CYFRA",font=("Arial", 12, "bold"),bd=10,height= 15, width=20,relief='ridge', command=partial(self.create_widgets, 0))
@@ -27,6 +28,9 @@ class Application(tk.Frame):
         # Create button 2 and pack it to the right half of the screen
         self.button2 = tk.Button(self, text="CEA",font=("Arial", 12, "bold"),bd=10,height= 15, width=20,relief='ridge', command=partial(self.create_widgets, 1))
         self.button2.grid(row=2,rowspan=2,column=3,padx=20, pady=20)
+
+        self.button1.configure(bg="#0077B5", fg="white")
+        self.button2.configure(bg="#0077B5", fg="white")
 
     def create_widgets(self,mode):
         self.home = tk.Toplevel()
