@@ -74,11 +74,11 @@ class Application(tk.Frame):
         self.keypad_window.geometry("500x400+150+40")
         self.keypad_window.overrideredirect(True)
         #self.keypad_window.resizable(False, False)
-        self.label = tk.Label(self.keypad_window, text="Sample Number:",font=("Arial", 12, "bold"))
+        self.label = tk.Label(self.keypad_window, text="Sample Number:",font=("Arial", 13, "bold"))
         self.label.grid(row=0,column=0,padx=3,pady=10)
 
-        self.entry = ttk.Entry(self.keypad_window, width=15,font=("Arial", 12, "bold"))
-        self.entry.grid(row=0,column=2,padx=10,pady=10)
+        self.entry = ttk.Entry(self.keypad_window, width=15,font=("Arial", 13, "bold"))
+        self.entry.grid(row=0,column=1,columnspan=3,padx=10,pady=10)
         
         # Create the buttons for the keypad
         buttons = [
