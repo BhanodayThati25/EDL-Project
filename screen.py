@@ -14,7 +14,7 @@ class Application(tk.Frame):
         self.master.attributes('-fullscreen', True)
         self.pack()
         self.sensor_type()
-        self.configure(background="#ADD8E6")
+        self.master.configure(background="#ADD8E6")
         # Create a main heading label and pack it at the top of the window
         self.heading_label = tk.Label(self, text="EDL Project", font=("Arial", 20, "bold"))
         #self.heading_label.pack(side="top", pady=20)
