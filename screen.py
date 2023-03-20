@@ -73,13 +73,14 @@ class Application(tk.Frame):
         self.keypad_window = tk.Toplevel(self.master)
         self.keypad_window.geometry("500x400+150+40")
         self.keypad_window.overrideredirect(True)
+        self.keypad_window.configure(background="#66B8E1")
         #self.keypad_window.resizable(False, False)
         self.label = tk.Label(self.keypad_window, text="Sample Number:",font=("Arial", 13, "bold"))
         self.label.grid(row=0,column=0,padx=3,pady=10)
+        self.label.configure(fg="black", bg="#66B8E1")
 
         self.entry = ttk.Entry(self.keypad_window, width=15,font=("Arial", 13, "bold"))
         self.entry.grid(row=0,column=1,columnspan=3,padx=10,pady=10)
-        
         # Create the buttons for the keypad
         buttons = [
             "7", "8", "9",
@@ -91,12 +92,15 @@ class Application(tk.Frame):
             button = tk.Button(self.keypad_window, text=buttons[i],font=("Arial", 14), width=9, height=3,relief='ridge')
             button.grid(row=((i // 3 + 2)-1), column=i % 3,padx=6,pady=3)
             button.bind("<Button-1>", self.keypad_button_click)
+            button.configure(bg="#005F8C", fg="white")
 
         # Create the Submit button
         submit_button = tk.Button(self.keypad_window, text="Submit", font=("Arial", 12),relief='ridge', command=partial(self.submit,x,mode))
         submit_button.grid(row=2,column=3,padx=3,pady=3)
+        submit_button.configure(bg="#005F8C", fg="white")
         cancel_button = tk.Button(self.keypad_window, text="Cancel", font=("Arial", 12),relief='ridge', command=self.keypad_window.destroy)
         cancel_button.grid(row=3,column=3,padx=3,pady=3)   
+        cancel_button.configure(bg="#005F8C", fg="white")
 
     def keypad_button_click(self, event):
         # Add the clicked button to the input field
