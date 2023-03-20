@@ -38,6 +38,8 @@ class Application(tk.Frame):
         self.heading_label = tk.Label(self.home, text="EDL Project", font=("Arial", 18, "bold"))
         #self.heading_label.pack(side="top", pady=20)
         self.heading_label.grid(row=0,column=2,padx=20, pady=20)
+        self.home.configure(background="#ADD8E6")
+        self.heading_label.configure(fg="#001F54", bg="#ADD8E6")
 
         self.delete = ImageTk.PhotoImage(Image.open("delete.png"))
         self.delete_all = ImageTk.PhotoImage(Image.open("delete_all.png"))
@@ -57,7 +59,13 @@ class Application(tk.Frame):
         self.button4.grid(row=4,column=2,padx=20, pady=20)
 
         self.back = tk.Button(self.home,image=self.back_p,text="Mode",font=("Arial", 8, "bold"),relief='ridge',compound="top", command=self.back_tab)
-        self.back.grid(row=3,column=2,padx=20, pady=20) 
+        self.back.grid(row=3,column=2,padx=20, pady=20)
+
+        self.button1.configure(bg="#0077B5", fg="white")
+        self.button2.configure(bg="#0077B5", fg="white")
+        self.button3.configure(bg="#0077B5", fg="white")
+        self.button4.configure(bg="#0077B5", fg="white")
+        self.back.configure(bg="#0077B5", fg="white")
 
     def show_keypad(self, x, mode):
         # Define a new Toplevel window for the keypad
