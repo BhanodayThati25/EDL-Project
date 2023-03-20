@@ -170,15 +170,19 @@ class Application(tk.Frame):
         self.confirm.geometry("250x150+275+165")
         #self.confirm.resizable(False, False)
         self.confirm.overrideredirect(True)
+        self.confirm.configure(background="#66B8E1")
 
         self.label = tk.Label(self.confirm, text="Do you want to delete all?",font=("Arial", 12, "bold"))
         self.label.grid(row=0,column=0,columnspan=2,padx=6,pady=30)  
+        self.label.configure(fg="black", bg="#66B8E1") 
 
         ok_button = tk.Button(self.confirm, text="OK", font=("Arial", 10),relief='ridge', command=partial(self.deleteall,mode))
         ok_button.grid(row=2,column=0,padx=20,pady=20)
+        ok_button.configure(bg="#005F8C", fg="white")
 
         cancel = tk.Button(self.confirm, text="Cancel", font=("Arial", 10),relief='ridge', command=self.confirm.destroy)
         cancel.grid(row=2,column=1,padx=20,pady=20)
+        cancel.configure(bg="#005F8C", fg="white")
 
     def submit(self, x, mode):
         # Get the input user and pass it to the code file
