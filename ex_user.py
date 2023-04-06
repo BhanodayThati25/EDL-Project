@@ -71,5 +71,4 @@ def input(user,mode):
 		#print("Concentration - CYFRA = ", conc/1000)
 		return(resp)
 
-	exit()
 		

@@ -58,4 +58,5 @@ def input(user,mode):
 			#file.write(str(k) + "\n")
 			#file.write(str(null_res) + "\n")
 			#file.write(str(res) + "\n")
-			exit()
+			break
+	
