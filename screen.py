@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-import test1 as newuser
-import test2 as existinguser
+import new_user as newuser
+import ex_user as existinguser
 from functools import partial
 from PIL import ImageTk, Image
 import os
@@ -212,7 +212,7 @@ class Application(tk.Frame):
                         
                 if os.path.exists(file_path):
                     conc = existinguser.input(user,mode)
-                    text = "Results:"+str(conc)
+                    text = "Conc.:"+str(conc)
                     self.common_window(text)
                 else:
                     self.common_window("Does not Exist")
