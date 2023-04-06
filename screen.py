@@ -212,7 +212,7 @@ class Application(tk.Frame):
                         
                 if os.path.exists(file_path):
                     conc = existinguser.input(user,mode)
-                    text = "Conc.:"+str(conc)
+                    text = "resp:"+str(conc)
                     self.common_window(text)
                 else:
                     self.common_window("Does not Exist")
@@ -248,7 +248,7 @@ class Application(tk.Frame):
             if x==1:
                 if os.path.exists(file_path):
                     conc = existinguser.input(user,mode)
-                    text = "Results:"+str(conc)
+                    text = "resp:"+str(conc)
                     self.common_window(text)
                 else:
                     self.common_window("Does not Exist")

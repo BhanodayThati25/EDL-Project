@@ -64,12 +64,12 @@ def input(user,mode):
 	if(mode == 0):
 		conc = (-0.0088*(resp**3)) + (2.8864*(resp**2)) + (605.27*(resp)) - 4856.59
 		#print("Concentration - CEA = ", conc/1000)
-		return(conc)
+		return(resp)
 
 	if(mode == 1):
 		conc = 0.147*(resp**3) + 14.5234*(resp**2) - 111.263*(resp) - 1256.154
 		#print("Concentration - CYFRA = ", conc/1000)
-		return(conc)
+		return(resp)
 
 	exit()
 		
